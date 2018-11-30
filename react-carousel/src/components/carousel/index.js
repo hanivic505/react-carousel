@@ -10,34 +10,23 @@ class Carousel extends React.Component {
   };
 
   render() {
-    const next = this.props.activeSlide + 1;
-    const prev = this.props.activeSlide - 1;
+    const { images, activeSlide, handleSlideTo } = this.props;
+    const next = activeSlide + 1;
+    const prev = activeSlide - 1;
     const disablePrev = prev >= 0 ? false : true;
-    const disableNext = next < this.props.images.length ? false : true;
+    const disableNext = next < images.length ? false : true;
     return (
       <div className="carousel">
         <ul>
-          {this.props.images.map((x, i) => (
-            <li
-              key={i}
-              className={this.slideClass(this.props.activeSlide, x, i)}
-            >
+          {images.map((x, i) => (
+            <li key={i} className={this.slideClass(activeSlide, x, i)}>
               <img src={x.src} />
+              <div className="caption">{x.caption}</div>
             </li>
           ))}
         </ul>
-        <button
-          onClick={() => this.props.handleSlideTo(prev)}
-          disabled={disablePrev}
-        >
-          Prev
-        </button>
-        <button
-          onClick={() => this.props.handleSlideTo(next)}
-          disabled={disableNext}
-        >
-          Next
-        </button>
+        <button onClick={() => handleSlideTo(prev)} disabled={disablePrev} />
+        <button onClick={() => handleSlideTo(next)} disabled={disableNext} />
       </div>
     );
   }
