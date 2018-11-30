@@ -5,8 +5,10 @@ import "./sass/carousel.scss";
 class Carousel extends React.Component {
   slideClass = (active, slide, current) => {
     if (active === current) return "active";
-    else if (active > current) return "out";
-    else return "";
+    else if (active === current - 1) return "next";
+    else if (active === current + 1) return "out";
+    else if (active >= current + 2) return "off";
+    // else return "";
   };
 
   render() {

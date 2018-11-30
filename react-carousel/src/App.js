@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./sass/App.scss";
 import Carousel from "./components/carousel";
+import { getImages } from "./web";
 
 class App extends Component {
   /**
@@ -42,6 +43,10 @@ class App extends Component {
       }
     ]
   };
+  async componentDidMount() {
+    const images = await getImages();
+    this.setState({ imgs: [...images.hits] });
+  }
   /**
    * Carousel navigation handler which sets the state activeSlide
    */

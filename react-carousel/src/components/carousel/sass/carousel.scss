@@ -1,3 +1,5 @@
+$break-large: 1200px;
+
 .carousel {
   position: relative;
   text-align: center;
@@ -19,6 +21,7 @@
       list-style: none;
       margin: 0;
       padding: 0;
+      text-align: center;
       &,
       * {
         transition: ease-in-out 1s;
@@ -36,6 +39,22 @@
       .caption {
         color: #33f;
         opacity: 0;
+      }
+      @media screen and (min-width: $break-large) {
+        width: 400px;
+        overflow: hidden;
+        &.active {
+          margin-left: -200px;
+        }
+        &.out {
+          left: 8vw;
+        }
+        &.next {
+          left: 66vw;
+        }
+        &.off {
+          left: -100%;
+        }
       }
     }
   }
