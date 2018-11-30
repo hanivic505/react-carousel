@@ -1,0 +1,34 @@
+.carousel {
+  position: relative;
+  background: #333;
+  text-align: center;
+  overflow: hidden;
+  height: 350px;
+  ul {
+    margin: 0;
+    z-index: 1;
+    padding: 0;
+    width: 100%;
+    height: 300px;
+    li {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      transition: ease-in-out 1s;
+      &.active {
+        left: 50%;
+        margin-left: -400px;
+      }
+      &.out {
+        left: -100%;
+      }
+    }
+  }
+  button {
+    z-index: 2;
+    position: relative;
+  }
+}
