@@ -30,8 +30,7 @@ $break-large: 1200px;
         height: 300px;
       }
       &.active {
-        left: 50%;
-        margin-left: -400px;
+        left: 0;
         .caption {
           opacity: 1;
         }
@@ -47,6 +46,7 @@ $break-large: 1200px;
         width: 400px;
         overflow: hidden;
         &.active {
+          left: 50%;
           margin-left: -200px;
         }
         &.out {
