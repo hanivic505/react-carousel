@@ -22,8 +22,8 @@ class Carousel extends React.Component {
         <ul>
           {images.map((x, i) => (
             <li key={i} className={this.slideClass(activeSlide, x, i)}>
-              <img src={x.src} />
-              <div className="caption">{x.caption}</div>
+              <img src={x.largeImageURL} />
+              <div className="caption">{x.tags}</div>
             </li>
           ))}
         </ul>

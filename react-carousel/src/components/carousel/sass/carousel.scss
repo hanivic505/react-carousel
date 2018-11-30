@@ -26,6 +26,9 @@ $break-large: 1200px;
       * {
         transition: ease-in-out 1s;
       }
+      img {
+        height: 300px;
+      }
       &.active {
         left: 50%;
         margin-left: -400px;
