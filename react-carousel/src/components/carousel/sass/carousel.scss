@@ -31,12 +31,21 @@ $break-large: 1200px;
       }
       &.active {
         left: 0;
+        opacity: 1;
         .caption {
           opacity: 1;
         }
       }
       &.out {
         left: -100%;
+        opacity: 0.75;
+        transform: scale(1.2) rotate(-9deg) translate(-8px, -10px)
+          skew(-10deg, 3deg);
+      }
+      &.next {
+        opacity: 0.75;
+        transform: scale(1.2) rotate(10deg) translate(8px, -8px)
+          skew(12deg, -3deg);
       }
       .caption {
         color: #33f;

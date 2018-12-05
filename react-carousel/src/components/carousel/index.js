@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./sass/carousel.scss";
 
 class Carousel extends React.Component {
@@ -8,7 +7,6 @@ class Carousel extends React.Component {
     else if (active === current - 1) return "next";
     else if (active === current + 1) return "out";
     else if (active >= current + 2) return "off";
-    // else return "";
   };
 
   render() {
@@ -22,7 +20,7 @@ class Carousel extends React.Component {
         <ul>
           {images.map((x, i) => (
             <li key={i} className={this.slideClass(activeSlide, x, i)}>
-              <img src={x.largeImageURL} />
+              <img src={x.largeImageURL} alt={x.tags} />
               <div className="caption">{x.tags}</div>
             </li>
           ))}
@@ -33,7 +31,5 @@ class Carousel extends React.Component {
     );
   }
 }
-
-Carousel.propTypes = {};
 
 export default Carousel;
