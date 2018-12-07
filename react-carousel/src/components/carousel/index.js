@@ -12,7 +12,8 @@ class Carousel extends React.Component {
   handleKeyDown = e => {
     const code = e.keyCode;
 
-    const { images, activeSlide, handleSlideTo } = this.props;
+    const { images, activeSlide } = this.props;
+    const { handleSlideTo } = this.props;
     const next = activeSlide + 1;
     const prev = activeSlide - 1;
     const disablePrev = prev >= 0 ? true : false;
@@ -24,7 +25,8 @@ class Carousel extends React.Component {
   };
 
   render() {
-    const { images, activeSlide, handleSlideTo } = this.props;
+    const { images, activeSlide } = this.props;
+    const { handleSlideTo } = this.props;
     const next = activeSlide + 1;
     const prev = activeSlide - 1;
     const disablePrev = prev >= 0 ? false : true;
